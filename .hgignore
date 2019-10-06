@@ -1,6 +1,6 @@
 syntax: glob
 
-.credentials
+#.credentials
 
 ### Maven
 target/
