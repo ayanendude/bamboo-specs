@@ -90,7 +90,7 @@ public class PlanSpec {
                                     .description("Maven with Cobertura CC report")
                                     .goal("cobertura:cobertura -Dcobertura.report.format=xml")
                                     .jdk("JDK 1.8")
-                                    .executableLabel("Maven 3"),
+                                    .executableLabel("mvn"),
                                 new AnyTask(new AtlassianModule("ch.mibex.bamboo.sonar4bamboo:sonar4bamboo.maven3task"))
                                     .description("Sonar Report Publisher")
                                     .enabled(false)
@@ -113,7 +113,7 @@ public class PlanSpec {
                                             .put("failBuildForSonarErrors", "")
                                             .put("sonarProjectVersion", "")
                                             .put("sonarBranch", "")
-                                            .put("executable", "Maven 3")
+                                            .put("executable", "mvn")
                                             .put("illegalBranchCharsReplacement", "_")
                                             .put("failBuildForTaskErrors", "true")
                                             .put("incrementalModeNotPossible", "incrementalModeRunFullAnalysis")
@@ -134,7 +134,7 @@ public class PlanSpec {
                                     .enabled(false)
                                     .goal("clean compile package")
                                     .jdk("JDK 1.8")
-                                    .executableLabel("Maven 3"))))
+                                    .executableLabel("mvn"))))
             .linkedRepositories("first-project")
             .planRepositories(new GitHubRepository()
                     .name("sherlock")
